@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="android:colorPrimary">#D32F2F</item>
         <item name="android:colorPrimaryDark">#B71C1C</item>
-        <item name="android:textColorPrimary">#F111</item>
+        <item name="android:textColorPrimary">#FFF</item>
 
 
     </style>

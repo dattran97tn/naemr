@@ -6,7 +6,6 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.NotificationCompat;
 import android.widget.Toast;
@@ -49,7 +48,7 @@ public class AlarmReceiver extends BroadcastReceiver {
                       long milliseconds = date.getTime();
                       long millisecondsFromNow = milliseconds - (new Date()).getTime();
 
-                      if(millisecondsFromNow <= 36000 && millisecondsFromNow >= 0) {
+                      if(millisecondsFromNow <= 65000 && millisecondsFromNow >= 0) {
                           Toast.makeText(context, "Có nhắc nhở", Toast.LENGTH_LONG).show();
 
                           Note selectNote = notes.get(i);
@@ -68,9 +67,9 @@ public class AlarmReceiver extends BroadcastReceiver {
                                   .setContentIntent(pendingIntent)
                                   .setAutoCancel(true)
                                   .build();
-                      notification.sound = Uri.parse("android.resource://"
-                       + context.getPackageName() + "/" + R.raw.doilathe);
-                          /*notification.defaults |= Notification.DEFAULT_SOUND;*/
+//                notification.sound = Uri.parse("android.resource://"
+//                        + context.getPackageName() + "/" + R.raw.dj);
+                          notification.defaults |= Notification.DEFAULT_SOUND;
                           NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
                           manager.notify(i, notification);
                       }
